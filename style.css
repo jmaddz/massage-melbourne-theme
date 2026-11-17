@@ -452,3 +452,6 @@ html, body { overflow-x: hidden; }
   .wp-block-table.is-style-card:not(.stack-table) td::before,
   .wp-block-table.card-table:not(.stack-table) td::before { content: none !important; }
 }
+
+/* ==== e2e deploy test 2026-11-17 ==== */
+:root { --e2e-test-token: ok; }
