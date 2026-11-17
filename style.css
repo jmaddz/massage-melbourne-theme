@@ -471,7 +471,8 @@ html.theme-dark {
   --global-palette-highlight: #FF704D;
   --global-palette-highlight-alt: #FF704D;
 }
-/* Dark mode: filled buttons need dark text on the warm orange (white is only 2.7:1) */
-html.theme-dark .wp-block-button__link:not(.has-text-color) {
-  color: #111111;
+/* Dark mode: filled buttons need dark text on the warm orange (white is 2.7:1).
+   Robust selector - buttons may carry has-text-color/palette classes. */
+html.theme-dark .wp-block-button:not(.is-style-outline) .wp-block-button__link {
+  color: #111111 !important;
 }
