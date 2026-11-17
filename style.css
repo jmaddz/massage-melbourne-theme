@@ -476,3 +476,15 @@ html.theme-dark {
 html.theme-dark .wp-block-button:not(.is-style-outline) .wp-block-button__link {
   color: #111111 !important;
 }
+
+/* Light-mode button contrast fix (PSI a11y): #D64B2A is a mid-tone that
+   fails AA with BOTH white (4.29) and near-black (4.40) text. Buttons now
+   use brand-700 bg + white text (5.8:1), hover brand-600 (5.3:1). */
+html, html.theme-light {
+  --btn-fill-bg: var(--brand-700);
+  --btn-fill-border: var(--brand-700);
+  --btn-fill-text: #FFFFFF;
+  --btn-fill-hover-bg: var(--brand-600);
+  --btn-fill-hover-border: var(--brand-600);
+  --btn-outline-text: var(--brand-700);
+}
