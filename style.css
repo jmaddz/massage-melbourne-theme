@@ -453,5 +453,25 @@ html, body { overflow-x: hidden; }
   .wp-block-table.card-table:not(.stack-table) td::before { content: none !important; }
 }
 
-/* ==== e2e deploy test 2026-11-17 ==== */
-:root { --e2e-test-token: ok; }
+
+/* ===================================================================
+   Brand + contrast fixes (PSI Accessibility) — 2026-11-17
+   Kadence's global palette was still the theme's factory-default blue
+   (#3182ce). Repoint it to the intended sunset/twilight brand, in
+   shades that pass WCAG AA on light and dark surfaces alike.
+   =================================================================== */
+:root,
+html.theme-light {
+  --global-palette1: #B63A1C;            /* sunset brand-700: 5.8:1 on white */
+  --global-palette-highlight: #B63A1C;   /* links: 5.4:1 on cream */
+  --global-palette-highlight-alt: #B63A1C;
+}
+html.theme-dark {
+  --global-palette1: #FF704D;            /* twilight brand: 6.9:1 on night bg */
+  --global-palette-highlight: #FF704D;
+  --global-palette-highlight-alt: #FF704D;
+}
+/* Dark mode: filled buttons need dark text on the warm orange (white is only 2.7:1) */
+html.theme-dark .wp-block-button__link:not(.has-text-color) {
+  color: #111111;
+}
